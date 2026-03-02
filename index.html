@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nossa História</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Nosso Amor em Linha do Tempo</h1>
+        <p class="hero-subtitle">contando cada segundo desde o nosso começo</p>
+
+        <div class="counter-card">
+          <p class="counter-label">Estamos juntos há</p>
+          <div class="counter-values" id="relationship-counter">
+            <!-- preenchido pelo JavaScript -->
+          </div>
+          <p class="counter-date" id="relationship-start"></p>
+        </div>
+
+        <a href="#timeline" class="scroll-down">Ver nossa história</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="timeline" class="timeline-section">
+        <h2>Nossa Linha do Tempo</h2>
+        <p class="timeline-intro">
+          Cada momento especial em um lugar só. Use as setas para navegar pela
+          nossa história.
+        </p>
+
+        <div class="timeline-wrapper">
+          <button class="nav-button left" id="prev-item" aria-label="Anterior">
+            &#10094;
+          </button>
+
+          <article class="timeline-card">
+            <div class="timeline-image-wrapper">
+              <img
+                id="timeline-image"
+                src=""
+                alt="Foto do nosso momento"
+                loading="lazy"
+              />
+            </div>
+            <div class="timeline-text">
+              <p class="timeline-date" id="timeline-date"></p>
+              <h3 class="timeline-title" id="timeline-title"></h3>
+              <p class="timeline-description" id="timeline-description"></p>
+              <div class="timeline-indicators" id="timeline-indicators"></div>
+            </div>
+          </article>
+
+          <button class="nav-button right" id="next-item" aria-label="Próximo">
+            &#10095;
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Feito com &hearts; para nós dois.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
