@@ -22,6 +22,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
@@ -356,6 +360,7 @@ a {
 @media (max-width: 640px) {
   .hero {
     padding-inline: 1.1rem;
+    padding-top: 3.5rem;
   }
 
   .counter-card {
@@ -372,6 +377,43 @@ a {
 
   .timeline-image-wrapper {
     max-height: 260px;
+  }
+
+  .timeline-description {
+    font-size: 0.9rem;
+  }
+
+  .nav-button {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero h1 {
+    font-size: 2.15rem;
+  }
+
+  .counter-chip {
+    min-width: 76px;
+    padding-inline: 0.7rem;
+  }
+
+  .timeline-section {
+    padding-block: 3rem 3.5rem;
+  }
+
+  .timeline-wrapper {
+    gap: 1rem;
+  }
+
+  .timeline-title {
+    font-size: 1.15rem;
+  }
+
+  .nav-button {
+    width: 52px;
+    height: 52px;
   }
 }
 

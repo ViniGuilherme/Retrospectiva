@@ -1,36 +1,59 @@
 // Ajuste esta data para o dia em que vocês começaram a namorar
-const RELATIONSHIP_START = new Date("2022-06-15T00:00:00"); // AAAA-MM-DD
+const RELATIONSHIP_START = new Date("2024-06-14T00:00:00"); // AAAA-MM-DD
 
 // Itens da linha do tempo: personalize à vontade
 const timelineItems = [
   {
-    date: "15 jun 2022",
+    date: "26 maio 2024",
     title: "O começo de tudo",
     description:
-      "O dia em que dissemos o primeiro 'sim' e tudo começou a fazer mais sentido. Um misto de frio na barriga com paz no coração.",
+      "Nosso primeiro encontro. Um filme horrível no cinema… mas a melhor história da minha vida começando ali. Duas horas em frente ao portão, conversando como se o mundo tivesse parado. Foi naquela noite que eu soube: era você.",
     image: "images/1.jpg",
   },
   {
-    date: "30 ago 2022",
+    date: "01 jun 2024",
     title: "Nosso primeiro passeio",
     description:
-      "Nos perdemos pela cidade, rimos de coisas bobas e voltamos pra casa com a certeza de que queremos nos perder juntos muitas vezes.",
+      "Um dia simples no parque, conversas sem pressa, risadas, besteiras e jogos bobos. Mas por trás da leveza, algo grande estava acontecendo: eu estava entrando na sua vida… e você na minha. Conhecer sua família e te apresentar aos meus foi quando eu percebi que aquilo já era muito mais do que só um começo.",
     image: "images/2.jpg",
   },
   {
-    date: "24 dez 2022",
-    title: "Primeiro Natal juntos",
+    date: "15 jun 2024",
+    title: "O Pedido",
     description:
-      "Família, comida boa, fotos estranhas e aquele abraço que faz qualquer lugar parecer casa.",
+      "Um dia depois de te pedir em namoro, eu acordei com a maior certeza da minha vida: eu tinha feito a escolha certa. O jantar japonês foi só a comemoração, porque o momento mais importante já tinha acontecido. Na noite anterior, quando eu te pedi em namoro, eu soube que queria você pra tudo.",
     image: "images/3.jpg",
   },
   {
-    date: "10 mar 2023",
-    title: "Nossa viagem inesquecível",
+    date: "27 jul 2024",
+    title: "O primeiro buque de flores",
     description:
-      "Entre fotos, paisagens e brincadeiras internas, a melhor parte sempre foi dividir tudo com você.",
+      "O primeiro buquê de flores que eu te dei… mas longe de ser o último gesto. Nada no mundo paga o sorriso que você deu naquele dia. Eu amo te ver feliz, e prometo nunca poupar esforços para ser parte dessa felicidade.",
     image: "images/4.jpg",
   },
+
+  {
+    date: "31 dez 2024",
+    title: "Primeiro final de ano juntos",
+    description:
+      "A primeira virada de ano juntos. Entre abraços, promessas e fogos no céu, eu fiz um pedido silencioso: que todos os próximos anos fossem com você. E ali eu tive ainda mais certeza de que era ao seu lado que eu queria viver cada novo começo.",
+    image: "images/6.jpg",
+  },
+  {
+    date: "20 jun 2025",
+    title: "Mais um passeio",
+    description:
+      "Uma tarde de sol no zoológico e o seu sorriso iluminando tudo ainda mais. Não era só sobre os animais ou o passeio… era sobre te ver feliz daquele jeito. Dias simples, mas que ficaram gigantes na minha memória.",
+    image: "images/7.jpg",
+  },
+  {
+    date: "06 fev 2026",
+    title: "Começo de um sonho",
+    description:
+      "Compramos nosso apartamento. Pode até demorar, mas ali começou algo muito maior que paredes e concreto. É o início do nosso lar, um lugar que vai ser preenchido com amor, carinho e todos os sonhos que estamos construindo juntos.",
+    image: "images/8.jfif",
+  },
+
 ];
 
 const counterContainer = document.getElementById("relationship-counter");
