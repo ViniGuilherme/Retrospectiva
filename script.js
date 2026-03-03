@@ -64,11 +64,17 @@ const dateEl = document.getElementById("timeline-date");
 const titleEl = document.getElementById("timeline-title");
 const descriptionEl = document.getElementById("timeline-description");
 const indicatorsEl = document.getElementById("timeline-indicators");
+const readMoreBtn = document.getElementById("timeline-read-more");
 
 const prevBtn = document.getElementById("prev-item");
 const nextBtn = document.getElementById("next-item");
 
 let currentIndex = 0;
+let isDescriptionExpanded = false;
+
+function isMobileViewport() {
+  return window.innerWidth <= 640;
+}
 
 function pad(value) {
   return String(value).padStart(2, "0");
@@ -138,6 +144,30 @@ function renderTimelineItem(index) {
   titleEl.textContent = item.title;
   descriptionEl.textContent = item.description;
 
+  isDescriptionExpanded = false;
+  descriptionEl.classList.remove("clamped");
+  readMoreBtn.classList.remove("visible");
+
+  // Aguarda o layout para decidir se precisa do "ver mais"
+  requestAnimationFrame(() => {
+    if (!isMobileViewport()) {
+      readMoreBtn.classList.remove("visible");
+      descriptionEl.classList.remove("clamped");
+      return;
+    }
+
+    const needsClamp = descriptionEl.scrollHeight > descriptionEl.clientHeight * 1.4;
+
+    if (needsClamp) {
+      descriptionEl.classList.add("clamped");
+      readMoreBtn.classList.add("visible");
+      readMoreBtn.textContent = "Ver mais";
+    } else {
+      descriptionEl.classList.remove("clamped");
+      readMoreBtn.classList.remove("visible");
+    }
+  });
+
   renderIndicators(index);
 }
 
@@ -161,6 +191,24 @@ function init() {
 
   prevBtn.addEventListener("click", showPrev);
   nextBtn.addEventListener("click", showNext);
+
+  readMoreBtn.addEventListener("click", () => {
+    if (!isMobileViewport()) return;
+
+    isDescriptionExpanded = !isDescriptionExpanded;
+
+    if (isDescriptionExpanded) {
+      descriptionEl.classList.remove("clamped");
+      readMoreBtn.textContent = "Ver menos";
+    } else {
+      descriptionEl.classList.add("clamped");
+      readMoreBtn.textContent = "Ver mais";
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    renderTimelineItem(currentIndex);
+  });
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "ArrowRight") showNext();
