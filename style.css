@@ -466,7 +466,9 @@ body.story-open {
   .story-overlay.is-open .timeline-section {
     padding-top: 0;
     padding-bottom: 0;
+    margin: 0;
     min-height: 100vh;
+    max-width: none;
   }
 
   .story-overlay.is-open .timeline-section h2,
@@ -475,8 +477,33 @@ body.story-open {
   }
 
   .story-overlay.is-open .timeline-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: none;
+    margin: 0;
     min-height: 100vh;
-    align-items: center;
+    padding: 0;
+  }
+
+  .story-overlay.is-open .timeline-wrapper .timeline-card {
+    width: 100%;
+    display: block;
+  }
+
+  .story-overlay.is-open .timeline-wrapper .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 102;
+  }
+
+  .story-overlay.is-open .timeline-wrapper .nav-button.left {
+    left: 0.5rem;
+  }
+
+  .story-overlay.is-open .timeline-wrapper .nav-button.right {
+    right: 0.5rem;
   }
 
   .timeline-section h2 {
@@ -530,9 +557,14 @@ body.story-open {
     right: 0;
     bottom: 0;
     z-index: 2;
-    padding: 1.25rem 1.2rem max(1.35rem, env(safe-area-inset-bottom));
+    padding: 1.25rem 1.2rem max(2rem, calc(1.5rem + env(safe-area-inset-bottom)));
     margin: 0;
     inset: auto;
+  }
+
+  .timeline-indicators {
+    justify-content: flex-start;
+    margin-top: 0.5rem;
   }
 
   .timeline-date {
