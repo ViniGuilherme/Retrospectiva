@@ -430,24 +430,23 @@ a {
   }
 
   .timeline-wrapper {
-    padding-inline: 0.75rem;
+    padding-inline: 0;
   }
 
-  /* Card = story estilo Instagram: foto cheia, texto em cima na parte de baixo */
   .timeline-card {
-    min-height: 72vh;
-    max-height: 85vh;
-    border-radius: var(--radius-lg);
+    min-height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
     overflow: hidden;
-    border: 1px solid var(--border-subtle);
-    box-shadow: var(--shadow-soft);
+    border: none;
+    box-shadow: none;
     background: #020617;
   }
 
   .timeline-image-wrapper {
     position: absolute;
     inset: 0;
-    border-radius: inherit;
+    border-radius: 0;
   }
 
   /* Escurece a parte de baixo da imagem para o texto, estilo story */
