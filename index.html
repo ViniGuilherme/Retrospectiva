@@ -27,12 +27,14 @@
           <p class="counter-date" id="relationship-start"></p>
         </div>
 
-        <a href="#timeline" class="scroll-down">Ver nossa história</a>
+        <a href="#" class="scroll-down" id="open-story">Ver nossa história</a>
       </div>
     </header>
 
     <main>
-      <section id="timeline" class="timeline-section">
+      <div id="story-overlay" class="story-overlay" aria-hidden="true">
+        <button type="button" class="story-close" id="story-close" aria-label="Fechar">×</button>
+        <section id="timeline" class="timeline-section">
         <h2>Nossa Linha do Tempo</h2>
         <p class="timeline-intro">
           Cada momento especial em um lugar só. Use as setas para navegar pela
@@ -73,6 +75,7 @@
           </button>
         </div>
       </section>
+      </div>
     </main>
 
     <footer class="footer">

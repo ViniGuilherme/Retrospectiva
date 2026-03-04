@@ -382,6 +382,48 @@ a {
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.9);
 }
 
+/* Overlay de história (fotos só ao clicar no botão) */
+.story-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #020617;
+  display: none;
+  overflow: hidden;
+}
+
+.story-overlay.is-open {
+  display: block;
+}
+
+body.story-open {
+  overflow: hidden;
+}
+
+.story-close {
+  position: fixed;
+  top: max(0.75rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+  z-index: 101;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(15, 23, 42, 0.85);
+  color: var(--text-main);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.story-close:hover {
+  background: rgba(15, 23, 42, 0.95);
+  transform: scale(1.05);
+}
+
 .footer {
   padding: 1.4rem 1.5rem 1.8rem;
   text-align: center;
@@ -419,6 +461,22 @@ a {
   .timeline-section {
     padding-inline: 0;
     padding-bottom: 2rem;
+  }
+
+  .story-overlay.is-open .timeline-section {
+    padding-top: 0;
+    padding-bottom: 0;
+    min-height: 100vh;
+  }
+
+  .story-overlay.is-open .timeline-section h2,
+  .story-overlay.is-open .timeline-section .timeline-intro {
+    display: none;
+  }
+
+  .story-overlay.is-open .timeline-wrapper {
+    min-height: 100vh;
+    align-items: center;
   }
 
   .timeline-section h2 {

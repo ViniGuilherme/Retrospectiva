@@ -68,6 +68,9 @@ const readMoreBtn = document.getElementById("timeline-read-more");
 
 const prevBtn = document.getElementById("prev-item");
 const nextBtn = document.getElementById("next-item");
+const openStoryBtn = document.querySelector("#open-story");
+const storyOverlay = document.getElementById("story-overlay");
+const storyClose = document.getElementById("story-close");
 
 let currentIndex = 0;
 let isDescriptionExpanded = false;
@@ -181,6 +184,20 @@ function showPrev() {
   renderTimelineItem(currentIndex);
 }
 
+function openStory() {
+  storyOverlay.classList.add("is-open");
+  storyOverlay.setAttribute("aria-hidden", "false");
+  document.body.classList.add("story-open");
+  currentIndex = 0;
+  renderTimelineItem(currentIndex);
+}
+
+function closeStory() {
+  storyOverlay.classList.remove("is-open");
+  storyOverlay.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("story-open");
+}
+
 function init() {
   relationshipStartText.textContent = `Desde ${formatStartDate(RELATIONSHIP_START)}`;
 
@@ -188,6 +205,19 @@ function init() {
   setInterval(updateCounter, 1000);
 
   renderTimelineItem(currentIndex);
+
+  openStoryBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    openStory();
+  });
+
+  storyClose.addEventListener("click", closeStory);
+
+  document.addEventListener("keydown", (event) => {
+    if (storyOverlay.classList.contains("is-open") && event.key === "Escape") {
+      closeStory();
+    }
+  });
 
   prevBtn.addEventListener("click", showPrev);
   nextBtn.addEventListener("click", showNext);
@@ -211,6 +241,7 @@ function init() {
   });
 
   document.addEventListener("keydown", (event) => {
+    if (!storyOverlay.classList.contains("is-open")) return;
     if (event.key === "ArrowRight") showNext();
     if (event.key === "ArrowLeft") showPrev();
   });
